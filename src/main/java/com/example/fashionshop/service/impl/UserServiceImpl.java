@@ -40,6 +40,13 @@ public class UserServiceImpl implements UserService {
                 "user with id:" + id + " not founded"));
     }
 
+
+    @Override
+    public boolean isExists(String id) {
+        return userRepository.findById(id).isPresent();
+
+    }
+
     @Override
     public User getByIdForSingUp(String id) {
 
@@ -58,6 +65,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(String id) {
+
         userRepository.deleteById(id);
     }
 }

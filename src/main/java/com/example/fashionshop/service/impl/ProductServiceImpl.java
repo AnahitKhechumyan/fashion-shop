@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -28,6 +29,7 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public Product create(Product product) {
+
         return productRepository.save(product);
     }
 
@@ -60,8 +62,11 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public List<Product> getAll() {
-        return productRepository
-                .findAll();
+        List<Product> all = productRepository.findAll();
+        Collections.reverse(all);
+        return all;
+      //  return productRepository
+              //  .findAll();
     }
 
     /***
@@ -98,4 +103,5 @@ public class ProductServiceImpl implements ProductService {
     public void delete(long id) {
         productRepository.deleteById(id);
     }
+
 }

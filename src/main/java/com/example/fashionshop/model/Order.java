@@ -1,8 +1,8 @@
 package com.example.fashionshop.model;
+
 import com.example.fashionshop.model.commons.enums.OrderStatus;
 import lombok.Data;
 import lombok.ToString;
-
 import javax.persistence.*;
 
 @Data
@@ -10,16 +10,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_order")
 public class Order {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-
     private Long date;
-
     private Integer count;
-
 
     @OneToOne
     private Product product;
@@ -29,4 +24,6 @@ public class Order {
 
     @ManyToOne
     private User user;
+    private String address;
+    private String phone;
 }

@@ -2,7 +2,6 @@ package com.example.fashionshop.model;
 
 import lombok.Data;
 import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,10 +11,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     private String id;
-
     private String email;
-
     private String name;
-
     private String picture;
 }

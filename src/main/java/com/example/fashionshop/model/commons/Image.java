@@ -3,7 +3,6 @@ package com.example.fashionshop.model.commons;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,10 +16,7 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String imagePath;
-
-
     public Image(String s) {
         this.imagePath = s;
     }

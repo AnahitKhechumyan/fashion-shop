@@ -1,26 +1,23 @@
 package com.example.fashionshop.service;
 
-
 import com.example.fashionshop.model.Order;
 import com.example.fashionshop.model.commons.enums.OrderStatus;
-import com.example.fashionshop.model.dto.requestDto.OrderUpdateReqDto;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface OrderService {
+    Order create(Order order);
 
     List<Order> getAll();
 
     List<Order> getOrderByStatus(String userId, OrderStatus orderStatus);
 
-    void delete(Long id);
+    Order getOrdersByUserId(long orderId);
 
     List<Order> getAllById(String id);
 
-    Order create(Order order);
-
-
+    @Transactional
     void changeStatus(Long orderId, OrderStatus orderStatus);
+    void delete(Long id);
 
-    Order update(OrderUpdateReqDto reqDto, String orderId);
 }

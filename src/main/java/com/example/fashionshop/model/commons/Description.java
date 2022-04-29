@@ -2,7 +2,6 @@ package com.example.fashionshop.model.commons;
 
 import lombok.Data;
 import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +14,5 @@ public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String comment;
-
 }

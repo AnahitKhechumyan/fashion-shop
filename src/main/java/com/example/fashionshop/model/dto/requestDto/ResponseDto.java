@@ -1,20 +1,15 @@
 package com.example.fashionshop.model.dto.requestDto;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import org.springframework.http.HttpStatus;
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 @ToString
 public class ResponseDto {
     private HttpStatus httpStatus;
     private  String message;
     private Map<String, String> info;
-
 
     public ResponseDto(String message) {
         this.message = message;
@@ -47,7 +42,6 @@ public class ResponseDto {
     public Map<String, String> getInfo() {
         return info;
     }
-
     public void addInfo(String key, String value){
         info.put(key, value);
     }
